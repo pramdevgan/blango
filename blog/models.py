@@ -3,15 +3,15 @@ from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation
+
 # Create your models here.
 
 
 class Tag(models.Model):
-  value = models.TextField(max_length=100)
-  
+    value = models.TextField(max_length=100)
 
-  def __str__(self):
-    return self.value
+    def __str__(self):
+        return self.value
 
 
 class Comment(models.Model):
@@ -22,6 +22,9 @@ class Comment(models.Model):
     content_object = GenericForeignKey("content_type", "object_id")
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.content
 
 
 class Post(models.Model):
@@ -38,5 +41,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-
