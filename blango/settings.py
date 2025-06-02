@@ -74,6 +74,13 @@ class Dev(Configuration):
         # ... your validators
     ]
 
+    PASSWORD_HASHERS = [
+      'django.contrib.auth.hashers.Argon2PasswordHasher',
+      'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+      'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+      'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    ]
+
     LANGUAGE_CODE = 'en-us'
     TIME_ZONE = values.Value("UTC")
     USE_I18N = True
@@ -124,3 +131,10 @@ class Dev(Configuration):
             "level": "DEBUG",
         },
     }
+    
+  
+  
+
+class Prod(Dev):
+  DEBUG = False
+  # SECRET_KEY = values.SecretValue('023fb4c21c3d5b12f1d45f94536a8538bf7fc92e6c997a4590')
