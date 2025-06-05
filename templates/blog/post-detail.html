@@ -15,6 +15,14 @@
                 {{ post.content|safe }}
             </div>
 
+            {% if post.author.profile %}
+              {% row %}
+                  {% col %}
+                      <h4>About the author</h4>
+                      <p>{{ post.author.profile.bio }}</p>
+                  {% endcol %}
+              {% endrow %}
+            {% endif %}
 
             <div class="mt-5">
                 {% include "blog/post-comments.html" %}
@@ -22,7 +30,6 @@
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
-            <h5 class="mb-3">Recent Posts</h5>
             <div class="recent-posts-list">
                 {% cache 3600 recent_posts post.pk %}
                     {% recent_posts post %}

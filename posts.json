@@ -1,0 +1,139 @@
+[
+  {
+    "author": "codio",
+    "title": "Getting Started with Django",
+    "slug": "getting-started-with-django",
+    "summary": "A beginner's guide to setting up your first Django project.",
+    "content": "<h2>Your First Steps with Django</h2><p>In this tutorial, we will walk through the steps to create a new Django project from scratch. We will cover the following key areas:</p><ul><li>Installation of Django</li><li>Creating a new project using <code>django-admin</code></li><li>Understanding the project structure</li><li>Running the development server for the first time.</li></ul><p>By the end, you'll have a basic Django site up and running, ready for you to build upon!</p>",
+    "tags": ["django", "python", "webdev"],
+    "comments": [
+      {
+        "creator": "admin",
+        "content": "Great overview! Very helpful for new developers."
+      },
+      {
+        "creator": "codewithpram",
+        "content": "Looking forward to the next part of this series."
+      }
+    ]
+  },
+  {
+    "author": "admin",
+    "title": "Advanced Django ORM Techniques",
+    "slug": "advanced-django-orm-techniques",
+    "summary": "Explore the power of Django's Object-Relational Mapper.",
+    "content": "<h2>Unlocking Performance with the ORM</h2><p>The Django ORM is incredibly powerful. This post dives into advanced topics to help you write more efficient queries.</p><p>We will explore:</p><ul><li>Query optimization using <code>select_related</code> for foreign key relationships.</li><li>The power of <code>prefetch_related</code> for many-to-many and reverse foreign key lookups.</li><li>Using conditional expressions with <code>Case</code> and <code>When</code>.</li><li>Leveraging database functions directly in your queries.</li></ul><p>Mastering these will significantly improve your application's performance.</p>",
+    "tags": ["django", "orm", "database", "performance"],
+    "comments": [
+      {
+        "creator": "codio",
+        "content": "The section on prefetch_related was exactly what I needed. Thanks!"
+      }
+    ]
+  },
+  {
+    "author": "codewithpram",
+    "title": "Deploying Django to Production",
+    "slug": "deploying-django-to-production",
+    "summary": "A step-by-step guide to deploying your Django application.",
+    "content": "<h2>From Development to Production</h2><p>Taking your Django app live can be daunting. This guide breaks it down into manageable steps.</p><p><strong>Key Topics Covered:</strong></p><ul><li>Server setup with a production-ready WSGI server like <strong>Gunicorn</strong>.</li><li>Using a web server like <strong>Nginx</strong> to serve static files and proxy requests.</li><li>Configuring your database for a production environment.</li><li>Essential security best practices, including setting <code>DEBUG = False</code>.</li></ul>",
+    "tags": ["django", "deployment", "nginx", "gunicorn"],
+    "comments": []
+  },
+  {
+    "author": "codio",
+    "title": "Understanding Django Templates",
+    "slug": "understanding-django-templates",
+    "summary": "Learn how to create dynamic HTML with the Django template language.",
+    "content": "<h2>The Django Template Language (DTL)</h2><p>Django's template engine is a key part of the framework's MVT (Model-View-Template) architecture. We will explore the core concepts:</p><ul><li><strong>Template Inheritance:</strong> Use <code>{% extends 'base.html' %}</code> to keep your code DRY.</li><li><strong>Template Tags:</strong> Control logic with tags like <code>{% if %}</code> and <code>{% for %}</code>.</li><li><strong>Filters:</strong> Modify variable output with filters like <code>{{ post.published_at|date:\"d M Y\" }}</code>.</li></ul><p>This is essential for building dynamic and maintainable web pages.</p>",
+    "tags": ["django", "templates", "frontend"],
+    "comments": [
+      {
+        "creator": "admin",
+        "content": "Clear and concise explanation. Well done."
+      }
+    ]
+  },
+  {
+    "author": "admin",
+    "title": "Securing Your Django Application",
+    "slug": "securing-your-django-application",
+    "summary": "Best practices for keeping your Django project safe from vulnerabilities.",
+    "content": "<h2>Security is Not an Afterthought</h2><p>This post covers common web vulnerabilities and how Django's built-in features help you prevent them. Follow these best practices to keep your application and user data secure.</p><h3>Common Threats:</h3><ul><li><strong>Cross-Site Scripting (XSS):</strong> Django templates auto-escape variables by default to prevent this.</li><li><strong>Cross-Site Request Forgery (CSRF):</strong> Use the <code>{% csrf_token %}</code> tag in all your POST forms.</li><li><strong>SQL Injection:</strong> The Django ORM protects you by using parameterized queries.</li></ul>",
+    "tags": ["django", "security", "websec"],
+    "comments": [
+      {
+        "creator": "codewithpram",
+        "content": "This is a must-read for all Django developers."
+      }
+    ]
+  },
+  {
+    "author": "codewithpram",
+    "title": "Building a REST API with Django Rest Framework",
+    "slug": "building-a-rest-api-with-drf",
+    "summary": "A practical guide to creating powerful APIs with DRF.",
+    "content": "<h2>APIs with DRF</h2><p>Django Rest Framework (DRF) is the go-to library for building APIs in Django. This tutorial will guide you through creating a fully functional REST API.</p><h3>Core Components:</h3><ul><li><code>Serializers</code>: To convert complex data types like querysets and model instances into native Python datatypes that can then be easily rendered into JSON.</li><li><code>ViewSets</code>: To handle the logic for a set of related views in a single class.</li><li><code>Routers</code>: To automatically generate the URL conf for your ViewSets.</li></ul><p>We will also cover authentication and permissions to secure your API endpoints.</p>",
+    "tags": ["django", "drf", "api", "rest"],
+    "comments": [
+      {
+        "creator": "codio",
+        "content": "Fantastic tutorial! DRF makes API development so much easier."
+      },
+      {
+        "creator": "admin",
+        "content": "Excellent choice of topic."
+      }
+    ]
+  },
+  {
+    "author": "codio",
+    "title": "Python for Data Science",
+    "slug": "python-for-data-science",
+    "summary": "An introduction to the libraries that make Python a data science powerhouse.",
+    "content": "<h2>The Language of Data</h2><p>Python is the language of choice for data science. In this article, we'll get an overview of essential libraries that form the foundation of the Python data science stack.</p><h3>Key Libraries:</h3><ul><li><strong>NumPy:</strong> For fundamental numerical computation and multi-dimensional arrays.</li><li><strong>Pandas:</strong> For data manipulation and analysis, primarily through its famous DataFrame object.</li><li><strong>Matplotlib:</strong> For creating static, animated, and interactive data visualizations.</li></ul><p>This is the starting point for your data science journey.</p>",
+    "tags": ["python", "datascience", "numpy", "pandas"],
+    "comments": []
+  },
+  {
+    "author": "admin",
+    "title": "Django Class-Based Views vs. Function-Based Views",
+    "slug": "cbv-vs-fbv",
+    "summary": "A comparison to help you decide which to use in your projects.",
+    "content": "<h2>Choosing Your View Style</h2><p>Django offers two ways to write views: <strong>Function-Based Views (FBVs)</strong> and <strong>Class-Based Views (CBVs)</strong>. This post breaks down the pros and cons of each.</p><h3>Function-Based Views (FBVs)</h3><p>Simple, explicit, and easy to read. Great for straightforward views that handle a single HTTP method.</p><h3>Class-Based Views (CBVs)</h3><p>Highly reusable and extensible, following the DRY principle. Ideal for more complex views that can benefit from inheritance and mixins.</p><p>Understanding both will make you a more effective Django developer.</p>",
+    "tags": ["django", "views", "cbv", "fbv"],
+    "comments": [
+      {
+        "creator": "codio",
+        "content": "I've always been a bit confused about when to use which. This clears things up."
+      }
+    ]
+  },
+  {
+    "author": "codewithpram",
+    "title": "Asynchronous Django with Channels",
+    "slug": "asynchronous-django-with-channels",
+    "summary": "Learn how to handle WebSockets and other long-lived connections in Django.",
+    "content": "<h2>Real-Time Django</h2><p>Django was traditionally synchronous, but with the <strong>Channels</strong> library, you can now write asynchronous code to handle protocols that require long-lived connections.</p><p>This opens up possibilities for real-time applications such as:</p><ul><li>Live chat applications</li><li>Real-time notifications</li><li>Streaming data dashboards</li></ul><p>Channels integrates into the Django ecosystem, extending its capabilities beyond the standard request-response cycle.</p>",
+    "tags": ["django", "async", "channels", "websockets"],
+    "comments": []
+  },
+  {
+    "author": "codio",
+    "title": "Custom User Model in Django",
+    "slug": "custom-user-model-django",
+    "summary": "Why and how to start a new Django project with a custom user model.",
+    "content": "<h2>The Best Practice for New Projects</h2><p>It's highly recommended to start <strong>every new Django project</strong> with a custom user model. While it may seem like extra work upfront, it provides immense flexibility for the future.</p><h3>Why do it?</h3><p>Once you've run your first migration, changing the user model is very difficult. Starting with a custom model, even if it's identical to the default User, means you can easily add fields like a profile picture, date of birth, or subscription status later on without complex migrations.</p><p>This post provides a clear, step-by-step guide on how to set one up from the very beginning of your project.</p>",
+    "tags": ["django", "authentication", "usermode"],
+    "comments": [
+      {
+        "creator": "admin",
+        "content": "This is crucial advice for anyone starting a new Django project."
+      },
+      {
+        "creator": "codewithpram",
+        "content": "I wish I had known this when I started my first project. Great tip!"
+      }
+    ]
+  }
+]
