@@ -1,31 +1,32 @@
 {% load blog_extras crispy_forms_tags %}
-<h4>Comments</h4>
+
+<h4 class="mb-4">Comments</h4>
+
 {% for comment in post.comments.all %}
-{% row "border-top pt-2" %}
-    {% col %}
-        <h5>Posted by {{ comment.creator }} at {{ comment.created_at|date:"M, d Y h:i" }}</h5>
-    {% endcol %}
-{% endrow %}
-{% row "border-bottom" %}
-    {% col %}
-        <p>{{ comment.content }}</p>
-    {% endcol %}
-{% endrow %}
+    <div class="border-top pt-3 pb-3">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="mb-0 text-primary">Posted by {{ comment.creator }}</h6>
+            <small class="text-muted">{{ comment.created_at|date:"M d, Y h:i A" }}</small>
+        </div>
+        <p class="mb-0" style="white-space: pre-wrap;">{{ comment.content }}</p>
+    </div>
 {% empty %}
-    {% row "border-top border-bottom" %}
-        {% col %}
-            <p>No comments.</p>
-        {% endcol %}
-    {% endrow %}
+    <div class="border-top border-bottom py-3" style="
+        background-color: #f8f9fa;
+        border-left: 4px solid #0d6efd;
+        padding-left: 1rem;
+        border-radius: 0.25rem;
+      ">
+      <p class="mb-0 fst-italic text-muted">No comments yet. Be the first to comment!</p>
+    </div>
 {% endfor %}
+
 {% if request.user.is_active %}
-{% row "mt-4" %}
-    {% col %}
-        <h4>Add Comment</h4>
-        <form method="post">
+    <div class="mt-5">
+        <h4 class="mb-3">Add a Comment</h4>
+        <form method="post" novalidate>
             {% csrf_token %}
-            {%  crispy comment_form %}
+            {% crispy comment_form %}
         </form>
-    {% endcol %}
-{% endrow %}
+    </div>
 {% endif %}

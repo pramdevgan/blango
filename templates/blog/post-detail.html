@@ -1,27 +1,34 @@
 {% extends "base.html" %}
 {% load blog_extras cache %}
-{% load blog_extras %}
 
 {% block content %}
-    <h2>{{ post.title }}</h2>
-    {% row %}
-        <div class="col">
-            {% include "blog/post-byline.html" %}
-        </div>
-    {% endrow %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <!-- Main Blog Content (70%) -->
+        <div class="col-lg-8">
+            <h1 class="fw-bold mb-3">{{ post.title }}</h1>
+            <div class="text-muted mb-4 small">
+                {% include "blog/post-byline.html" %}
+            </div>
 
-    {% row %}
-        <div class="col">
-            {{ post.content|safe }}
-        </div>
-    {% endrow %}
+            <div class="blog-content fs-5 lh-lg">
+                {{ post.content|safe }}
+            </div>
 
-    {% row %}
-        {% col %}
-            {% cache 3600 recent_posts %}
-                {% recent_posts post %}
-            {%endcache%}
-        {% endcol %}
-    {% endrow %}
-    {% include "blog/post-comments.html" %}
+
+            <div class="mt-5">
+                {% include "blog/post-comments.html" %}
+            </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+            <h5 class="mb-3">Recent Posts</h5>
+            <div class="recent-posts-list">
+                {% cache 3600 recent_posts post.pk %}
+                    {% recent_posts post %}
+                {% endcache %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

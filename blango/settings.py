@@ -20,6 +20,8 @@ class Dev(Configuration):
     CSRF_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SAMESITE = 'None'
 
+    INTERNAL_IPS = ["192.168.10.31"]
+
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
@@ -29,7 +31,8 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         'blog',
         "crispy_forms",
-        "crispy_bootstrap5"
+        "crispy_bootstrap5",
+        "debug_toolbar",
     ]
 
     MIDDLEWARE = [
@@ -40,6 +43,7 @@ class Dev(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware', # Ensure this is enabled
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
     ]
 
     ROOT_URLCONF = 'blango.urls'
