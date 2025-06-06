@@ -34,6 +34,11 @@ class Dev(Configuration):
         "crispy_forms",
         "crispy_bootstrap5",
         "debug_toolbar",
+        "django.contrib.sites",
+        "allauth",
+        "allauth.account",
+        "allauth.socialaccount",
+        "allauth.socialaccount.providers.google"
     ]
 
     MIDDLEWARE = [
@@ -136,10 +141,20 @@ class Dev(Configuration):
             "level": "DEBUG",
         },
     }
+
+    
     AUTH_USER_MODEL = "blango_auth.User"
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     ACCOUNT_ACTIVATION_DAYS = 7
     REGISTRATION_OPEN = True
+
+    # AllAuth Setup
+    SITE_ID = 3
+    ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+    ACCOUNT_EMAIL_REQUIRED = True
+    ACCOUNT_USERNAME_REQUIRED = False
+    ACCOUNT_AUTHENTICATION_METHOD = "email"
+
     
   
   
